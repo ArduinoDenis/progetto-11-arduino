@@ -1,299 +1,158 @@
-// variabili utilizzate nel programma
+// Variables used in the program
+int button = LOW; // button state variable, initial value 0 (LOW)
+int i; // variable used in for loops
+int j; // variable used in for loops
 
-int pulsante = LOW; // variabile di stato del pulsante, valore iniziale 0 (LOW)
+/* The following routines are executed only when called by instructions
+in the void loop () section */
 
-int i; // variabile utilizzata nei cicli for
-
-int j; // variabile utilizzata nei cicli for
-
-/* Le routine che seguono vengono eseguite solo quando sono richiamate da istruzioni presenti
-
-nella sezione void loop ()*/
-
-// ************************ routine di visualizzazione del numero 1 **************
-
-void uno(void)
-
+// ************************ routine for displaying number 1 **************
+void one(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,HIGH); // attiva tutte le porte e spegne preventivamente tutti i led
-
- digitalWrite(4,LOW); // disattiva la porta 4 e accende il segmento verticale destro alto
-
- digitalWrite(6,LOW); // disattiva la porta 6 e accende il segmento verticale destro basso
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, HIGH); // activate all ports and turn off all LEDs
+  digitalWrite(4, LOW); // deactivate port 4 and light up the right high vertical segment
+  digitalWrite(6, LOW); // deactivate port 6 and light up the right low vertical segment
 }
 
-// *********************** routine di visualizzazione del numero 2 **********************
-
-void due(void)
-
+// *********************** routine for displaying number 2 **********************
+void two(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e accende preventivamente tutti i led
-
- digitalWrite(6,HIGH); // attiva la porta 6 e spegne il segmento verticale destro basso
-
- digitalWrite(2,HIGH); // attiva la porta 2 e spegne il segmento verticale sinistro alto
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(6, HIGH); // activate port 6 and turn off the low right vertical segment
+  digitalWrite(2, HIGH); // activate port 2 and turn off the high left vertical segment
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
 }
 
- 
-
-// ********************** routine di visualizzazione del numero 3 *********************
-
-void tre(void)
-
+// ********************** routine for displaying number 3 *********************
+void three(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e accende preventivamente tutti i led
-
- digitalWrite(2,HIGH); // attiva la porta 2 e spegne il segmento verticale alto di sinistra
-
- digitalWrite(8,HIGH); // attiva la porta 8 e spegne il segmento verticale basso di sinistra
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(2, HIGH); // activate port 2 and turn off the high left vertical segment
+  digitalWrite(8, HIGH); // activate port 8 and turn off the low left vertical segment
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
 }
 
-// ********************* routine di visualizzazione del numero 4 **********************
-
-void quattro(void)
-
+// ********************* routine for displaying number 4 **********************
+void four(void)
 {
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
- digitalWrite(7,HIGH); // attiva la porta 7 e spegne il segmento orizzontale basso
-
- digitalWrite(8,HIGH); // attiva la porta 8 e spegne il segmento verticale sinistro basso
-
- digitalWrite(3,HIGH); // attiva la porta 3 e spegne il segmento orizzontale alto
-
+  digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
+  digitalWrite(7, HIGH); // activate port 7 and turn off the bottom horizontal segment
+  digitalWrite(8, HIGH); // activate port 8 and turn off the left low vertical segment
+  digitalWrite(3, HIGH); // activate port 3 and turn off the top horizontal segment
 }
 
-// *************************** routine di visualizzazione del numero 5 **********************
-
-void cinque(void)
-
-// Arduino: countdown, cifra digitale
-
+// *************************** routine for displaying number 5 **********************
+void five(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite (5, HIGH); // attiva la porta 5 e spegne il punto decimale
-
- digitalWrite (4, HIGH); // attiva la porta 4 e spegne il segmento verticale alto destro
-
- digitalWrite (8, HIGH); // attiva la porta 8 e spegne il segmento verticale basso sinistro
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
+  digitalWrite(4, HIGH); // activate port 4 and turn off the right high vertical segment
+  digitalWrite(8, HIGH); // activate port 8 and turn off the left low vertical segment
 }
 
-// ************************ routine di visualizzazione del numero 6 ****************************
-
-void six(void) // e’ stato usato il termine six al posto di “sei” poiche’ “sei”
-
-{ // e’ parola “riservata” che manda in crisi il compilatore
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite(5, HIGH); // attiva la porta 5 e spegne il punto decimale
-
- digitalWrite(4,HIGH); // attiva la porta 4 e spegne il segmento verticale alto destro
-
-}
-
-// ***************************** routine di visualizzazione del numero 7 ************************
-
-void sette(void)
-
+// ************************ routine for displaying number 6 ****************************
+void six(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,HIGH); // disattiva tutte le porte e quindi spegne preventivamente tutti i led
-
-digitalWrite(3,LOW); // disattiva la porta 3 e accende il segmento orizzontale alto
-
-digitalWrite(4,LOW); // disattiva la porta 4 e accende il segmento verticale alto destro
-
-digitalWrite(6,LOW); // disattiva la porta 6 e accende il segmento verticale basso destro
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
+  digitalWrite(4, HIGH); // activate port 4 and turn off the right high vertical segment
 }
 
-// ********************************* routine di visualizzazione del numero 8 ********************
-
-void otto(void)
-
+// ***************************** routine for displaying number 7 ************************
+void seven(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, HIGH); // deactivate all ports and turn off all LEDs
+  digitalWrite(3, LOW); // deactivate port 3 and light up the top horizontal segment
+  digitalWrite(4, LOW); // deactivate port 4 and light up the right high vertical segment
+  digitalWrite(6, LOW); // deactivate port 6 and light up the right low vertical segment
 }
 
-// ************************ routine di visualizzazione del numero 9 ***********************
-
-void nove(void)
-
+// ********************************* routine for displaying number 8 ********************
+void eight(void)
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
- digitalWrite(8, HIGH); // attiva la porta 8 e quindi spegne il segmento verticale basso sinistro
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
 }
 
-// **************************** routine di visualizzazione del numero zero *************************
+// ************************ routine for displaying number 9 ***********************
+void nine(void)
+{
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
+  digitalWrite(8, HIGH); // activate port 8 and turn off the left low vertical segment
+}
 
+// **************************** routine for displaying number zero *************************
 void zero(void)
-
 {
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, LOW); // deactivate all ports and light up all LEDs
+  digitalWrite(5, HIGH); // activate port 5 and turn off the decimal point
+  digitalWrite(1, HIGH); // activate port 1 and turn off
 
- for (j=1;j<=8;j++)
-
- digitalWrite(j,LOW); // disattiva tutte le porte e quindi accende preventivamente tutti i led
-
- digitalWrite(5,HIGH); // attiva la porta 5 e spegne il punto decimale
-
- digitalWrite(1, HIGH); // attiva la porta 1 e spegne il segmento orizzontale centrale
-
+ the middle horizontal segment
 }
 
 void setup()
-
 {
-
- for(i=1;i<=8;i++)
-
-// Arduino: countdown, cifra digitale
-
- pinMode(i,OUTPUT); // definisce le porte da 1 a 8 come porte di output
-
- pinMode(11,INPUT); // definisce la porta 11, alla quale e' collegato il pulsante,
-
- // come una porta di input
-
- pinMode(12,OUTPUT); // definisce la porta 12, alla quale e' collegato il buzzer, come
-
- // una porta di output
-
- pinMode(13,OUTPUT); // definisce la porta 13, alla quale e' collegato il led, come una
-
- // porta di output
-
+  for (i = 1; i <= 8; i++)
+    pinMode(i, OUTPUT); // define ports 1 through 8 as output ports
+  pinMode(11, INPUT);   // define port 11, to which the button is connected, as an input port
+  pinMode(12, OUTPUT);  // define port 12, to which the buzzer is connected, as an output port
+  pinMode(13, OUTPUT);  // define port 13, to which the LED is connected, as an output port
 }
 
 void loop()
-
 {
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,HIGH); // attiva tutte le porte e quindi spegne tutti i led della cifra digitale
-
-pulsante = digitalRead(11); // legge lo stato del pulsante
-
- while (pulsante) // esegue le istruzioni successive solo se il valore del pulsante e' 1 (High)
-
- // e cioe’ se il pulsante e’ premuto
-
- {
-
- nove(); // lancia la routine di visualizzazione del numero 9
-
- delay(1000); // attende 1 secondo
-
- otto(); // lancia la routine di visualizzazione del numero 8 .....
-
- delay(1000);
-
- sette();
-
- delay(1000);
-
- six();
-
- delay(1000);
-
- cinque();
-
- delay(1000);
-
- quattro();
-
- delay(1000);
-
- tre();
-
- delay(1000);
-
- due();
-
- delay(1000);
-
- uno();
-
- delay(1000);
-
- zero();
-
- delay(1000);
-
- for (j=1;j<=8;j++)
-
- digitalWrite(j,HIGH); // attiva tutte le porte e quindi spegne tutti i led
-
- for (i=1;i<=20;i++) //routine per l'emissione del segnale sonoro e per il lampeggio del led
-
- {
-
- digitalWrite(13, HIGH); // accende il led
-
- digitalWrite(12, LOW); // spegne il buzzer
-
- digitalWrite(5, LOW); // accende il punto decimale
-
- delay (70);
-
- digitalWrite(13, LOW); // spegne il led
-
- digitalWrite(12,HIGH); // attiva il buzzer
-
- digitalWrite (5, HIGH); // spegne il punto decimale
-
- delay (70);
-
- pulsante = LOW; // pone il pulsante in stato LOW, in modo da non ripetere il countdown
-
- // fino a quando il pulsante non verra’ nuovamente premuto
-
- digitalWrite(12,LOW); // spegne il buzzer
-
- }
-
- }
-
+  for (j = 1; j <= 8; j++)
+    digitalWrite(j, HIGH); // activate all ports and turn off all LEDs of the digital figure
+  button = digitalRead(11); // read button state
+  while (button)             // execute the following instructions only if the button value is 1 (High)
+  {                          // i.e., if the button is pressed
+    nine();                  // call the routine for displaying number 9
+    delay(1000);             // wait for 1 second
+    eight();                 // call the routine for displaying number 8 .....
+    delay(1000);
+    seven();
+    delay(1000);
+    six();
+    delay(1000);
+    five();
+    delay(1000);
+    four();
+    delay(1000);
+    three();
+    delay(1000);
+    two();
+    delay(1000);
+    one();
+    delay(1000);
+    zero();
+    delay(1000);
+    for (j = 1; j <= 8; j++)
+      digitalWrite(j, HIGH); // activate all ports and turn off all LEDs
+    for (i = 1; i <= 20; i++) // routine for emitting the sound signal and for blinking the LED
+    {
+      digitalWrite(13, HIGH); // turn on the LED
+      digitalWrite(12, LOW);  // turn off the buzzer
+      digitalWrite(5, LOW);   // turn on the decimal point
+      delay(70);
+      digitalWrite(13, LOW);  // turn off the LED
+      digitalWrite(12, HIGH); // turn on the buzzer
+      digitalWrite(5, HIGH);  // turn off the decimal point
+      delay(70);
+      button = LOW;           // set the button to LOW state, so as not to repeat the countdown
+                              // until the button is pressed again
+      digitalWrite(12, LOW);  // turn off the buzzer
+    }
+  }
 }
